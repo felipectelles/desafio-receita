@@ -10,11 +10,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import rhsouthsystem.desafioreceita.model.Conta;
 import rhsouthsystem.desafioreceita.service.ReceitaService;
+import rhsouthsystem.desafioreceita.util.DecimalFormatter;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +35,7 @@ public class SincronizacaoReceitaFacade {
                 .build()) {
             String[] nextRecord;
             while ((nextRecord = reader.readNext()) != null) {
-                double saldo = Double.parseDouble(nextRecord[2].replace(",", "."));
+                BigDecimal saldo = DecimalFormatter.toBigDecimal(nextRecord[2]);
                 contas.add(receitaService.atualizarConta(nextRecord[0], nextRecord[1], saldo, nextRecord[3]));
             }
         }

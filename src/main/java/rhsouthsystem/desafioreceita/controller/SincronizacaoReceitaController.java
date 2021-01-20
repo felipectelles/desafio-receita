@@ -1,10 +1,8 @@
 package rhsouthsystem.desafioreceita.controller;
 
-import com.opencsv.exceptions.CsvException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +12,6 @@ import rhsouthsystem.desafioreceita.facade.SincronizacaoReceitaFacade;
 import rhsouthsystem.desafioreceita.model.Conta;
 import rhsouthsystem.desafioreceita.util.OpenCSVWriter;
 
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
