@@ -1,4 +1,13 @@
 # rh-southsystem-desafio-receita
+
+Exemplo de request:
+```
+curl --location --request POST 'localhost:8080/sincronizacao/receita' \
+--form 'file=@"/Users/fetec/Desktop/desafio-receita.csv"'
+```
+Arquivo de csv exemplo e jar na raiz do projeto.
+O jar se encontra na raiz do projeto.
+
 # Objetivo
 
 ## Cenário de Negócio:
